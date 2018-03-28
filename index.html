@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AvAc discord formatter</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<br>
+	<div class="container">
+	<h1 class="text-center">Easy Discord Display</h1>
+		<div class="jumbotron">
+			<div class="container-fluid">
+				<div id="characters">
+					<div class="character1" id="character1">
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<input type="text" class="Name form-control" name="Name" placeholder="Name">
+							</div>
+							<div class="col-12 col-md-6 col-lg-2">
+								<input type="number" min="0" max="100" class="Level form-control" name="Level" placeholder="Level">
+							</div>
+							<div class="col-12 col-md-6 col-lg-2">
+								<select class="Rank custom-select" name="Rank">
+									<option disabled selected>Rank</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+							<div class="col-12 col-md-6 col-lg-2">
+								<select class="Rarity custom-select" name="Rarity">
+									<option disabled selected>Rarity</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="buttons">
+					<div class="d-none d-md-block">
+						<div class="row">
+								<div class="col-md-6 col-lg-4 col-auto mr-auto">
+									<button type="button" class="btn-block btn-danger btn" onclick="removeRow()">Remove Row</button>
+								</div>
+								<div class="col-md-6 col-lg-4 pull-right">
+									<button type="button" class="btn-block btn-success btn" onclick="addRow()" >Add Row</button>
+								</div>
+						</div>
+					</div>
+					<div class="d-sm-block d-md-none d-lg-none d-xl-none">
+						<div class="row">
+								<div class="col-12">
+									<button type="button" class="btn-block btn-success btn" onclick="addRow()">Add Row</button>
+								</div>
+								<br> <br>
+								<div class="col-12">
+									<button type="button" class="btn-block btn-danger btn" onclick="removeRow()">Remove Row</button>
+								</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+					<div class="col-12">
+						<button type="button" class="btn-block btn-secondary btn" onclick="getCharacters()">Generate</button>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div id="output">
+		</div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

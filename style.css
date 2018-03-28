@@ -1,0 +1,11 @@
+.pull-right {
+    float: right !important; // Use of important emulates bootstrap
+}
+
+.code {
+	color: white;
+}
+
+p {
+	background: #2C2F33;
+}
