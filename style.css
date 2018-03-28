@@ -10,3 +10,10 @@
 p {
 	background: #2C2F33;
 }
+
+body {
+	background-image: url("src/cosmo.png");
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin-bottom: 200px;
+}
