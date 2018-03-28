@@ -53,7 +53,7 @@ function getCharacters() {
 	for (var i = 0; i < size ; i++) {
 		let character = {}
 		let characterHTML = document.getElementById(`character${i+1}`)
-		character.name = characterHTML.getElementsByClassName('Name form-control')[0].value
+		character.name = characterHTML.getElementsByClassName('Name form-control')[0].value.trim()
 		character.level = parseInt(characterHTML.getElementsByClassName('Level form-control')[0].value)
 		character.rank = characterHTML.getElementsByClassName('Rank custom-select')[0].value
 		character.rarity = characterHTML.getElementsByClassName('Rarity custom-select')[0].value
