@@ -1,4 +1,4 @@
-let row = `<div class="row">
+let row = `<br> <div class="row">
 <div class="col-12 col-md-6">
 <input type="text" class="Name form-control" name="Name" placeholder="Name">
 </div>
@@ -54,10 +54,11 @@ function getCharacters() {
 		let character = {}
 		let characterHTML = document.getElementById(`character${i+1}`)
 		character.name = characterHTML.getElementsByClassName('Name form-control')[0].value
-		character.level = characterHTML.getElementsByClassName('Level form-control')[0].value
+		character.level = parseInt(characterHTML.getElementsByClassName('Level form-control')[0].value)
 		character.rank = characterHTML.getElementsByClassName('Rank custom-select')[0].value
 		character.rarity = characterHTML.getElementsByClassName('Rarity custom-select')[0].value
-		if(character.name !== null && character.level !== null && character.rank !== 'Rank' && character.rarity !== 'Rarity'){
+		console.log(Number.isInteger(character.level))
+		if(character.name !== null && character.level !== null && Number.isInteger(character.level) && character.rank !== 'Rank' && character.rarity !== 'Rarity'){
 			characters.push(character)
 		}
 		
