@@ -1,4 +1,4 @@
-let row = `<br> <div class="row">
+const row = `<br> <div class="row">
 <div class="col-12 col-md-6">
 <input type="text" class="Name form-control" name="Name" placeholder="Name">
 </div>
@@ -57,7 +57,6 @@ function getCharacters() {
 		character.level = parseInt(characterHTML.getElementsByClassName('Level form-control')[0].value)
 		character.rank = characterHTML.getElementsByClassName('Rank custom-select')[0].value
 		character.rarity = characterHTML.getElementsByClassName('Rarity custom-select')[0].value
-		console.log(Number.isInteger(character.level))
 		if(character.name !== null && character.level !== null && Number.isInteger(character.level) && character.rank !== 'Rank' && character.rarity !== 'Rarity'){
 			characters.push(character)
 		}
@@ -73,7 +72,7 @@ function displayCharacters(characters){
 		if(character.name.length > nameSize) nameSize = character.name.length
 	})
 	characters.forEach((character)=>{
-		let line = `Name: ${character.name} `
+		let line = `${character.name} `
 		for (var i = 0; i < nameSize - character.name.length; i++) {
 			line += '&nbsp;'
 		}
@@ -84,6 +83,9 @@ function displayCharacters(characters){
 	})
 	script += '\`\`\`<br>'
 
-	document.getElementById('output').innerHTML = `<div class="jumbotron"><p><code class="code">${script}</code></p></div>`
+	document.getElementById('output').innerHTML = `<div class="jumbotron"><p><code id="copy" class="code">${script}</code></p><button type="button" class="copyButton btn-block btn-success btn" id="copyButtonId" data-id="@item.Type"
+ data-clipboard-action="copy" data-clipboard-target="code#copy">Copy</button></div>`
 	console.log(script)	
 }
+
+var clipboard = new Clipboard('.copyButton');
